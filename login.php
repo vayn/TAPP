@@ -11,7 +11,11 @@ if ($_POST['submit']) {
 
             if (!file_exists($user_dir)) {
                 if (mkdir($user_dir, 0777)) {
-                    copy('./users/config.sample', $user_dir . 'config.php');
+                    copy('./users/config.sample.php', $user_dir . 'config.php');
+                    copy('./users/include.sample.php', $user_dir . 'include.php');
+                }
+                else {
+                    echo '创建目录失败，请检查权限设置';
                 }
             }
             header('Location: index.php');

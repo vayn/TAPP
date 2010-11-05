@@ -94,7 +94,7 @@
                         switch ($type) {
                             case 'html':
                                 echo "<pre class='sh_php'><code>&lt?php\n" .
-                                    "require('" . str_replace('\\', '/', dirname(__FILE__)) . "/include.php');\n" .
+                                    "require('" . str_replace('\\', '/', dirname(__FILE__)) . '/' . $user_dir . "include.php');\n" .
                                     '?&gt;</code></pre>';
                                 break;
 
