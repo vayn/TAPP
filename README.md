@@ -18,7 +18,7 @@ __TAPP 支持多用户。__
 
 生成图片签名就像这样：
 
-![TAPP Signature](http://lab.jixia.org/tapp/users/disinfeqt/show.png)
+![TAPP Signature](https://github.com/Vayn/TAPP/raw/master/users/disinfeqt/show.png)
 
 ## Contact Us
 
