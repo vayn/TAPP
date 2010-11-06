@@ -6,7 +6,8 @@ TAPP 生成的代码可直接在网页上使用，比如选择 JSON 格式会生
 
 ## How to install?
 
-首先 clone 最新版的 TAPP，修改 users.php，格式是“Twitter Username:Password”，注意这个密码不是 twitter 密码，而是登录 TAPP 的密码。 __TAPP 支持多用户。__
+首先 clone 最新版的 TAPP，修改 users.php，格式是“Twitter Username:Password”，注意这个密码不是 twitter 密码，而是登录 TAPP 的密码。
+ __TAPP 支持多用户。__
 
 然后，请把 TAPP 上传到你自己的空间，设置好权限（777）就算安装完毕。
 
