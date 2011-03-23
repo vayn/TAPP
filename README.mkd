@@ -16,10 +16,6 @@ __TAPP 支持多用户。__
 
 如果你想生成签名图，还需要查找 04b03.ttf 和 wqy.ttc 两个字体并放入 show 文件夹内。
 
-生成图片签名就像这样：
-
-![TAPP Signature](https://github.com/Vayn/TAPP/raw/master/users/disinfeqt/show.png)
-
 ## Contact Us
 
 如果你有什么问题请发 email 到 vayn@vayn.de

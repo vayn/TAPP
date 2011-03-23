@@ -1,0 +1,981 @@
+/* 
+	Styles for <Tapp>
+	Author: disinfeqt
+	Website: www.zdxia.com
+	E-mail: disinfeqt@gmail.com
+	Version: 0.1
+	Includes: Uniform Theme, Speech Bubble Icons, Login page styles, SHJS.
+*/
+* {
+    list-style: none;
+    font-weight: normal;
+    vertical-align: baseline;
+    text-decoration: none;
+    border: 0;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    font-size: 1em;
+}
+* html .clearfix, :first-child+html .clearfix {
+    zoom: 1
+}
+.clear {
+    visibility: hidden;
+    clear: both;
+    width: 0;
+    height: 0;
+    display: block;
+    overflow: hidden;
+}
+.vr {
+    border-left: 1px solid #fff;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    float: left;
+    height: 50px;
+    margin: 0 10px 0;
+    display: block;
+}
+hr {
+    border: 0;
+    border-top: 1px solid #000;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    clear: both;
+    filter: alpha(opacity = 30);
+    height: 0;
+    margin: 15px 0;
+}
+article, aside, figure, footer, header, hgroup, nav, section {
+    display: block;
+    position: relative;
+}
+nav ul li {
+    float: right
+}
+.clearfix:after, nav:after {
+    visibility: hidden;
+    line-height: 0;
+    clear: both;
+    width: 0;
+    height: 0;
+    content: ' ';
+    display: block;
+    font-size: 0;
+}
+header h1 {
+    text-align: center;
+    -moz-transform: scaleY(0.8);
+    -webkit-transform: scaleY(0.8);
+    letter-spacing: 8px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    font: 700 40px/1 "arial black", arial, serif;
+    color: #E0E3E8;
+    color: rgba(224, 227, 232, 0.8);
+    cursor: default;
+}
+header h1:hover {
+    color: #E0E3E8
+}
+.noime {
+    ime-mode: disabled
+}
+::-moz-focus-inner {
+    border: none;
+    padding: 0;
+}
+html {
+    background: url("../img/texture.png") repeat scroll 0 0 #E6EAEF;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    font: 300 13px/18px "Helvetica Neue",Helvetica,Arial,serif;
+    color: #aaa;
+    position: static;
+}
+input, textarea, label {
+    cursor: pointer
+}
+body {
+    background: #fff;
+    box-shadow: 0 1px 4px #777 inset;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#eee));
+    background: -moz-linear-gradient(center top , #fefefe, #eee) repeat scroll 0 0 transparent;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 4px #777 inset;
+    -moz-border-radius: 5px;
+    -webkit-box-shadow: 0 1px 4px #777 inset;
+    -webkit-border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    width: 350px;
+    border: 1px solid #fff;
+    margin: 50px auto;
+    padding: 15px 20px;
+}
+a:link, a:visited {
+    text-decoration: none;
+    color: #bbb;
+}
+a:hover, a:focus {
+    text-decoration: underline;
+    color: #999;
+}
+a:active:focus {
+    outline: none
+}
+small {
+    font-size: 90%
+}
+footer {
+    text-align: center;
+    line-height: 1.8;
+    text-shadow: 1px 1px 0 #fff;
+    margin: 15px 0 0;
+    font-size: 12px;
+}
+input, select {
+    font: 14px "Lucida Grande",Arial,serif;
+    color: #777;
+}
+select option {
+    height: 15px;
+    font-size: 12px;
+}
+fieldset p {
+    line-height: 25px;
+    text-shadow: 1px 1px 0 #fff;
+    float: left;
+    height: 60px;
+    display: block;
+}
+p input[type="text"], p input[type="password"] {
+    background: #fff;
+    box-shadow: inset 0 2px 2px #dedede;
+    border-radius: 3px;
+    -moz-box-shadow: inset 0 2px 2px #dedede;
+    -moz-border-radius: 3px;
+    -webkit-box-shadow: inset 0 2px 2px #dedede;
+    -webkit-border-radius: 3px;
+    font: 13px "Lucida Grande",Arial,Sans-serif;
+    color: #777;
+    width: 110px;
+    border: 1px solid #ccc;
+    cursor: text;
+    padding: 4px 5px;
+    font-size: 14px;
+	ime-mode: disabled
+}
+p input.long[type="text"] {
+    box-shadow: none;
+    border-left: medium none;
+    -moz-box-shadow: none;
+    -moz-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    -webkit-box-shadow: none;
+    -webkit-border-radius: 0 3px 3px 0;
+    float: left;
+    width: 276px;
+    height: 17px;
+    font-size: 12px;
+}
+p input[type=radio], p input[type=checkbox] {
+    margin-top: 2px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+p label {
+    font-weight: bold;
+    margin: 0 0 3px;
+    display: block;
+}
+p label ~ label {
+    font-weight: normal;
+    display: inline;
+    padding: 0 5px 0 2px;
+    font-size: 12px;
+}
+p label.url_btn {
+    background: rgb(42, 171, 213);
+    background: rgba(42, 171, 213, 0.5);
+    font-family: arial;
+    font-weight: bold;
+    line-height: 27px;
+    border-radius: 20px 0 0 20px;
+    -moz-border-radius: 20px 0 0 20px;
+    -webkit-border-radius: 20px 0 0 20px;
+    color: #fff;
+    float: left;
+    width: 40px;
+    height: 27px;
+    display: block;
+    padding: 0 12px 0 10px;
+    font-size: 11px;
+}
+input#test_submit {
+    float: left
+}
+input#save_submit {
+    margin: 0 auto;
+    display: block;
+}
+p.func {
+    display: block
+}
+p.func *:focus {
+    box-shadow: 0 0 4px #3592F1;
+    -moz-box-shadow: 0 0 4px #3592F1;
+    -webkit-box-shadow: 0 0 4px #3592F1;
+}
+p.func span {
+    padding: 5px 0 0
+}
+.blue {
+    background: #2e8cf0;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 0 1px #2c7cd1 inset, 0 1px 0 1px rgba(143, 228, 255, 0.2) inset, 0 28px 20px -18px rgba(143, 228, 255, 0.6) inset, 0 0 0 2px #2f94ff inset, 0 1px 0 0 rgba(255, 255, 255, 0.6);
+    -moz-border-radius: 3px;
+    -webkit-box-shadow: 0 0 0 1px #2c7cd1 inset, 0 1px 0 1px rgba(143, 228, 255, 0.2) inset, 0 28px 20px -18px rgba(143, 228, 255, 0.6) inset, 0 0 0 2px #2f94ff inset, 0 1px 0 0 rgba(255, 255, 255, 0.6);
+    -webkit-border-radius: 6px;
+    -webkit-background-clip: padding-box;
+    color: #fff;
+    padding: 5px 20px 7px;
+    font-size: 13px;
+}
+.blue:active {
+    -moz-box-shadow: 0 0 0 1px #2c7cd1 inset, 0 1px 0 1px rgba(143, 228, 255, 0.1) inset, 0 28px 20px -18px rgba(143, 228, 255, 0.2) inset, 0 0 0 2px #2f94ff inset, 0 1px 0 0 rgba(255, 255, 255, 0.6);
+    -webkit-box-shadow: 0 0 0 1px #2c7cd1 inset, 0 1px 0 1px rgba(143, 228, 255, 0.1) inset, 0 28px 20px -18px rgba(143, 228, 255, 0.2) inset, 0 0 0 2px #2f94ff inset, 0 1px 0 0 rgba(255, 255, 255, 0.6);
+}
+.clean-gray {
+    background: #eee;
+    background: -moz-linear-gradient(0% 100% 90deg, #DFDFDF, #fefefe);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#DFDFDF));
+    box-shadow: inset 0 0 2px #f5f5f5;
+    text-align: center;
+    font-family: "lucida grande", sans-serif;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 0 1px 0px #fff;
+    border-radius: 3px;
+    -moz-box-shadow: inset 0 0 2px #f5f5f5;
+    -moz-border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 2px #f5f5f5;
+    -webkit-border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    color: #999;
+    width: 100px;
+    border: 1px solid #ccc;
+    padding: 8px 0;
+    font-size: 12px;
+}
+.clean-gray:active {
+    background: #bfbfbf;
+    background: -moz-linear-gradient(0% 100% 90deg, #DFDFDF, #DFDFDF);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DFDFDF), to(#DFDFDF));
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+select {
+    box-shadow: 0 2px 2px #DEDEDE inset;
+    background: #FFFFFF;
+    font-family: helvetica Neue;
+    border-radius: 3px;
+    -moz-box-shadow: 0 2px 2px #DEDEDE inset;
+    -moz-border-radius: 3px;
+    -webkit-box-shadow: 0 2px 2px #DEDEDE inset;
+    -webkit-appearance: none;
+    -webkit-border-radius: 3px;
+    width: 50px;
+    border: 1px solid #ccc;
+    padding: 6px 5px;
+}
+select.long {
+    width: 80px
+}
+input[type=radio], input[type=checkbox] {
+    vertical-align: middle;
+    cursor: pointer;
+}
+/**** Speech Bubble Icons *****/
+.spch-bub-inside {
+    text-decoration: none;
+    margin: 15px 0;
+    position: relative;
+}
+.spch-bub-inside .point {
+    border-left: 0.45em solid rgba(42, 171, 213, 0.9);
+    border-bottom: 0.45em solid #FFF;
+    border-bottom: 0.45em solid rgba(0,0,0,0);
+    left: 35px;
+    width: 0;
+    height: 0;
+    bottom: -15px;
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    font-size: 35px;
+}
+.spch-bub-inside em {
+    -moz-box-shadow: 0 0 3px #888888;
+    -webkit-box-shadow: 0 0 3px #888888;
+    box-shadow: 0 0 3px #888888;
+    background: -moz-linear-gradient(center top , #E6E7E7, #9FA2A4) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e6e7e7), to(#9fa2a4));
+    background: linear-gradient(center top , #E6E7E7, #9FA2A4) repeat scroll 0 0 transparent;
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+    width: 330px;
+}
+.spch-bub-inside em b {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: inset 0 0 3px #333;
+    -webkit-box-shadow: inset 0 0 3px #333;
+    box-shadow: inset 0 0 3px #333;
+    background: -moz-linear-gradient(center top , #EDF0E1, #E7EAD5 50%, #DFE4C8 50.1%, #EAECD0) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#edf0e1), to(#e7ead5), color-stop(.5, #EAECD0),color-stop(.501, #dfe4c8));
+    background: linear-gradient(center top , #EDF0E1, #E7EAD5 50%, #DFE4C8 50.1%, #EAECD0) repeat scroll 0 0 transparent;
+    border-bottom: 1px solid #DCDDDF;
+    font: 12px/1.3 Lucida Grande;
+    color: #555;
+    display: block;
+    padding: 10px;
+}
+textarea {
+    background: #fff;
+    cursor: text;
+    font: 12px/1.4 courier new;
+    max-height: 100px;
+    padding: 4px 5px;
+    width: 338px;
+}
+pre {
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    background: none repeat scroll 0 0 #F0F6FC;
+    border: 1px solid #D2DCE6;
+    overflow-y: auto;
+    box-shadow: inset 0 2px 2px #dedede;
+    border-radius: 3px;
+    -moz-box-shadow: inset 0 2px 2px #dedede;
+    -moz-border-radius: 3px;
+    -webkit-box-shadow: inset 0 2px 2px #dedede;
+    -webkit-border-radius: 3px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    color: #777777;
+    margin: 15px 0;
+    padding: 14px;
+}
+pre code {
+    color: #444444;
+    display: block;
+    font-family: Monaco,monospace;
+    font-size: 12px;
+    line-height: 18px;
+}
+pre code a {
+    color: #444444 !important
+}
+/* login */
+body.login {
+    width: 200px;
+    margin: 10% auto 0;
+}
+body.login p input.long {
+    width: 180px
+}
+body.login .clean-gray {
+    width: 90px;
+    float: left;
+    padding: 6px 0;
+}
+body.login fieldset p {
+    margin-bottom: 10px;
+    float: none;
+}
+p.error {
+    background: rgba(255, 0, 0, 0.1);
+    font-weight: bold;
+    padding: 5px;
+}
+body.login p.succ {
+    background: rgba(54, 127, 0, 0.1);
+    font-weight: bold;
+    padding: 5px;
+}
+body.login footer {
+    text-align: left
+}
+body.login hr {
+    margin: 10px 0
+}
+/*
+
+Uniform Theme: Uniform Default
+Version: 1.6
+By: Josh Pyles
+License: MIT License
+---
+For use with the Uniform plugin:
+http://pixelmatrixdesign.com/uniform/
+---
+Generated by Uniform Theme Generator:
+http://pixelmatrixdesign.com/uniform/themer.html
+
+*/
+/* Global Declaration */
+div.selector span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+}
+div.selector, div.selector span, div.checker span, div.radio span, div.uploader, div.uploader span.action, div.button, div.button span {
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+    -webkit-font-smoothing: antialiased;
+}
+div.uploader.active span.action, div.uploader:active span.action {
+    background-position: right -465px
+}
+div.uploader span.filename {
+    line-height: 24px;
+    height: 24px;
+    margin: 2px 0px 2px 2px;
+    /* change this line to adjust positioning of filename area */
+}
+div.uploader span.filename {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    float: left;
+    cursor: default;
+    padding: 0px 10px;
+    display: block;
+    overflow: hidden;
+}
+div.uploader span.filename {
+    border-right: solid 1px #bbb;
+    color: #777;
+    width: 82px;
+    font-size: 11px;
+}
+div.uploader span.action {
+    text-align: center;
+    text-shadow: #fff 0px 1px 0px;
+    font-weight: bold;
+    background-color: #fff;
+    width: 85px;
+    font-size: 11px;
+}
+div.uploader span.action {
+    float: left;
+    cursor: pointer;
+    display: inline;
+    padding: 2px 0px;
+    overflow: hidden;
+}
+div.uploader span.action {
+    line-height: 24px;
+    background-position: right -409px;
+    height: 24px;
+}
+div.selector select {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: solid 1px #fff;
+    min-width: 77px;
+    font-size: 12px;
+}
+div.selector select {
+    top: 0px;
+    left: 0px;
+    /* change these to adjust positioning of select element */
+}
+div.button.disabled, div.button:disabled {
+    background-position: 0px -613px
+}
+div.button.disabled span, div.button:disabled span {
+    background-position: right -733px;
+    color: #bbb;
+    cursor: default;
+}
+div.selector select {
+    background: none;
+    filter: alpha(opacity:0);
+    height: 25px;
+    border: none;
+    opacity: 0;
+    position: absolute;
+}
+div.selector:active, div.selector.active {
+    background-position: -483px -156px
+}
+div.selector.focus:active, div.selector.focus.active, div.selector:hover:active, div.selector.active:hover {
+    background-position: -483px -208px
+}
+div.selector.focus:active span, div.selector:hover:active span, div.selector.active:hover span, div.selector.focus.active span {
+    background-position: right -78px
+}
+div.selector:active span, div.selector.active span {
+    background-position: right -26px
+}
+div.uploader input {
+    top: 0;
+    right: 0;
+    float: right;
+    filter: alpha(opacity:0);
+    bottom: 0;
+    height: 25px;
+    border: none;
+    cursor: default;
+    opacity: 0;
+    position: absolute;
+}
+div.uploader input {
+    width: 190px
+}
+div.uploader.focus, div.uploader.hover, div.uploader:hover {
+    background-position: 0px -353px
+}
+div.uploader.focus.active span.action, div.uploader:focus.active span.action, div.uploader.focus:active span.action, div.uploader:focus:active span.action {
+    background-position: right -493px
+}
+div.uploader.focus span.action, div.uploader.hover span.action, div.uploader:hover span.action {
+    background-position: right -437px
+}
+div.selector.focus, div.selector.hover, div.selector:hover {
+    background-position: -483px -182px
+}
+div.selector.focus span, div.selector.hover span, div.selector:hover span {
+    background-position: right -52px
+}
+div.selector span {
+    cursor: pointer;
+    padding: 0px 25px 0px 2px;
+}
+div.button.active, div.button:active {
+    background-position: 0px -583px
+}
+div.button.active span, div.button:active span {
+    background-position: right -703px;
+    color: #555;
+}
+div.selector span {
+    text-shadow: 0 1px 0 #fff;
+    color: #666;
+    width: 40px;
+}
+div.selector span {
+    line-height: 26px;
+    background-position: right 0px;
+    height: 26px;
+}
+div.button.focus, div.button:focus, div.button:hover, div.button.hover {
+    background-position: 0px -553px
+}
+div.button.focus span, div.button:focus span, div.button:hover span, div.button.hover span {
+    background-position: right -673px
+}
+div.button span {
+    text-align: center;
+    line-height: 1;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+div.button span {
+    background-position: right -643px
+}
+div.button span {
+    margin-left: 13px;
+    padding-top: 8px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-left: 2px;
+    padding-right: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    height: 22px;
+    font-size: 12px;
+}
+div.button a, div.button button, div.button input {
+    position: absolute
+}
+/* INPUT & TEXTAREA */
+.selector, .radio, .checker, .uploader, .button, .selector *, .radio *, .checker *, .uploader *, .button * {
+    margin: 0;
+    padding: 0;
+}
+.selector select:focus, .radio input:focus, .checker input:focus, .uploader input:focus {
+    outline: 0
+}
+input.text, input.email, input.password, textarea.uniform {
+    background: url('../img/bg-input-focus.png') repeat-x 0px 0px;
+    background: url('../img/bg-input.png') repeat-x 0px 0px;
+    border-top: solid 1px #aaa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    border-left: solid 1px #aaa;
+    border-right: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #777;
+    padding: 3px;
+    outline: 0;
+    font-size: 12px;
+}
+/* SPRITES */
+/* Select */
+div.selector {
+    line-height: 26px;
+    background-position: -483px -130px;
+    height: 26px;
+}
+div.selector.disabled {
+    background-position: -483px -234px
+}
+div.selector.disabled span {
+    color: #bbb
+}
+div.selector.disabled span {
+    background-position: right -104px
+}
+/* Checkbox */
+div.checker {
+    width: 19px;
+    height: 19px;
+}
+div.checker.focus:active span.checked, div.checker:hover:active span.checked, div.checker.active:hover span.checked, div.checker.active.focus span.checked {
+    background-position: -133px -260px
+}
+div.checker:active span.checked, div.checker.active span.checked {
+    background-position: -95px -260px
+}
+div.checker.focus span.checked, div.checker:hover span.checked {
+    background-position: -114px -260px
+}
+div.checker.focus:active span, div.checker:active:hover span, div.checker.active:hover span, div.checker.focus.active span {
+    background-position: -57px -260px
+}
+div.checker span.checked {
+    background-position: -76px -260px
+}
+div.checker:active span, div.checker.active span {
+    background-position: -19px -260px
+}
+div.checker.focus span, div.checker:hover span {
+    background-position: -38px -260px
+}
+div.checker input {
+    background: none;
+    filter: alpha(opacity:0);
+    opacity: 0;
+    display: inline-block;
+}
+div.checker input {
+    width: 19px;
+    height: 19px;
+}
+div.checker span {
+    background-position: 0px -260px;
+    width: 19px;
+    height: 19px;
+}
+div.checker span {
+    text-align: center;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+div.checker.disabled span, div.checker.disabled:active span, div.checker.disabled.active span {
+    background-position: -152px -260px
+}
+div.checker.disabled span.checked, div.checker.disabled:active span.checked, div.checker.disabled.active span.checked {
+    background-position: -171px -260px
+}
+/* Radio */
+div.radio {
+    width: 18px;
+    height: 18px;
+}
+div.radio.focus:active span.checked, div.radio:hover:active span.checked, div.radio.focus.active span.checked, div.radio.active:hover span.checked {
+    background-position: -126px -279px
+}
+div.radio:active span.checked, div.radio.active span.checked {
+    background-position: -90px -279px
+}
+div.radio.focus span.checked, div.radio:hover span.checked {
+    background-position: -108px -279px
+}
+div.radio.focus:active span, div.radio:active:hover span, div.radio.active:hover span, div.radio.active.focus span {
+    background-position: -54px -279px
+}
+div.radio span.checked {
+    background-position: -72px -279px
+}
+div.radio:active span, div.radio.active span {
+    background-position: -18px -279px
+}
+div.radio.focus span, div.radio:hover span {
+    background-position: -36px -279px
+}
+div.radio input {
+    text-align: center;
+    background: none;
+    filter: alpha(opacity:0);
+    opacity: 0;
+    display: inline-block;
+}
+div.radio input {
+    width: 18px;
+    height: 18px;
+}
+div.radio span {
+    text-align: center;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+div.radio span {
+    background-position: 0px -279px;
+    width: 18px;
+    height: 18px;
+}
+div.radio.disabled span, div.radio.disabled:active span, div.radio.disabled.active span {
+    background-position: -144px -279px
+}
+div.radio.disabled span.checked, div.radio.disabled:active span.checked, div.radio.disabled.active span.checked {
+    background-position: -162px -279px
+}
+/* Uploader */
+div.uploader {
+    background-position: 0px -297px;
+    height: 28px;
+}
+div.uploader.disabled {
+    background-position: 0px -325px
+}
+div.uploader.disabled span.filename {
+    border-color: #ddd;
+    color: #aaa;
+}
+div.uploader.disabled span.action {
+    background-position: right -381px
+}
+div.uploader.disabled span.action {
+    color: #aaa
+}
+div.button {
+    background-position: 0px -523px
+}
+/* PRESENTATION */
+/* Button */
+div.button {
+    height: 30px
+}
+/* Select */
+div.selector {
+    font-size: 12px
+}
+/* Checker */
+div.checker {
+    margin-right: 5px
+}
+/* Radio */
+div.radio {
+    margin-top: 0
+}
+/* Uploader */
+div.uploader {
+    width: 190px;
+    cursor: pointer;
+}
+/*
+
+CORE FUNCTIONALITY 
+
+Not advised to edit stuff below this line
+-----------------------------------------------------
+*/
+.selector, .checker, .button, .radio, .uploader {
+    vertical-align: middle;
+    zoom: 1;
+    display: -moz-inline-box;
+    display: inline-block;
+    *display: inline;
+}
+/* Button */
+div.button {
+    cursor: pointer;
+    position: relative;
+}
+/* Select */
+div.selector {
+    padding-left: 10px;
+    position: relative;
+    overflow: hidden;
+}
+/* Checker */
+div.checker {
+    position: relative
+}
+/* Radio */
+div.radio {
+    position: relative
+}
+/* Uploader */
+div.uploader {
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+pre.sh_sourceCode p {
+    margin: 0
+}
+pre.sh_sourceCode .sh_keyword {
+    color: blue;
+    font-weight: normal;
+} /* language keywords */
+pre.sh_sourceCode .sh_type {
+    color: darkgreen
+} /* basic types */
+pre.sh_sourceCode .sh_usertype {
+    color: teal
+} /* user defined types */
+pre.sh_sourceCode .sh_string {
+    color: red
+} /* strings and chars */
+pre.sh_sourceCode .sh_regexp {
+    color: orange
+} /* regular expressions */
+pre.sh_sourceCode .sh_specialchar {
+    color: pink
+} /* e.g., \n, \t, \\ */
+pre.sh_sourceCode .sh_comment {
+    color: brown;
+    font-style: italic;
+} /* comments */
+pre.sh_sourceCode .sh_number {
+    color: purple
+} /* literal numbers */
+pre.sh_sourceCode .sh_preproc {
+    color: darkblue;
+    font-weight: normal;
+} /* e.g., #include, import */
+pre.sh_sourceCode .sh_symbol {
+    color: darkred
+} /* e.g., <, >, + */
+pre.sh_sourceCode .sh_function {
+    color: black;
+    font-weight: normal;
+} /* function calls and declarations */
+pre.sh_sourceCode .sh_cbracket {
+    color: red
+} /* block brackets (e.g., {, }) */
+pre.sh_sourceCode .sh_todo {
+    font-weight: normal;
+    background-color: cyan;
+} /* TODO and FIXME */
+/* Predefined variables and functions (for instance glsl) */
+pre.sh_sourceCode .sh_predef_var {
+    color: darkblue
+}
+pre.sh_sourceCode .sh_predef_func {
+    color: darkblue;
+    font-weight: normal;
+}
+/* for OOP */
+pre.sh_sourceCode .sh_classname {
+    color: teal
+}
+/* line numbers (not yet implemented) */
+pre.sh_sourceCode .sh_linenum {
+    color: black
+}
+/* Internet related */
+pre.sh_sourceCode .sh_url {
+    color: blue;
+    text-decoration: underline;
+}
+/* for ChangeLog and Log files */
+pre.sh_sourceCode .sh_date {
+    color: blue;
+    font-weight: normal;
+}
+pre.sh_sourceCode .sh_time, pre.sh_sourceCode .sh_file {
+    color: darkblue;
+    font-weight: normal;
+}
+pre.sh_sourceCode .sh_ip, pre.sh_sourceCode .sh_name {
+    color: darkgreen
+}
+/* for Prolog, Perl... */
+pre.sh_sourceCode .sh_variable {
+    color: darkgreen
+}
+/* for LaTeX */
+pre.sh_sourceCode .sh_italics {
+    color: darkgreen;
+    font-style: italic;
+}
+pre.sh_sourceCode .sh_bold {
+    color: darkgreen;
+    font-weight: normal;
+}
+pre.sh_sourceCode .sh_underline {
+    color: darkgreen;
+    text-decoration: underline;
+}
+pre.sh_sourceCode .sh_fixed {
+    color: green
+}
+pre.sh_sourceCode .sh_argument {
+    color: darkgreen
+}
+pre.sh_sourceCode .sh_optionalargument {
+    color: purple
+}
+pre.sh_sourceCode .sh_math {
+    color: orange
+}
+pre.sh_sourceCode .sh_bibtex {
+    color: blue
+}
+/* for diffs */
+pre.sh_sourceCode .sh_oldfile {
+    color: orange
+}
+pre.sh_sourceCode .sh_newfile {
+    color: darkgreen
+}
+pre.sh_sourceCode .sh_difflines {
+    color: blue
+}
+/* for css */
+pre.sh_sourceCode .sh_selector {
+    color: purple
+}
+pre.sh_sourceCode .sh_property {
+    color: blue
+}
+pre.sh_sourceCode .sh_value {
+    color: darkgreen;
+    font-style: italic;
+}
+/* other */
+pre.sh_sourceCode .sh_section {
+    color: black;
+    font-weight: normal;
+}
+pre.sh_sourceCode .sh_paren {
+    color: red
+}
+pre.sh_sourceCode .sh_attribute {
+    color: darkgreen
+}
