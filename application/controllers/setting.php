@@ -20,7 +20,8 @@ class Setting extends CI_Controller {
         $user = $this->session->userdata('user');
 
         $this->config->load('custom');
-        $data['user_dir'] = $this->config->item('user_dir')."/{$user}/";
+        $user_dir = $this->config->item('user_dir')."{$user}/";
+        $data['user_dir'] = $user_dir;
 
         $data['url'] = $this->config->site_url();
         $data['cache'] = $data['url']."user/{$user}/";
@@ -123,6 +124,9 @@ class Setting extends CI_Controller {
             $setting['latest'] = $data ? $data['latest'] : '!!Error!!';
 
             $this->Setting_model->update_setting($setting);
+
+            $this->load->helper('function');
+            save_cache($data['tweets'], $type, $user_dir);
             redirect('./');
         }
         else {

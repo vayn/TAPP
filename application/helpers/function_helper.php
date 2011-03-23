@@ -5,7 +5,7 @@
 function process($url) {
     // HTTPHEADER
     // http://is.gd/g0h5v
-    $headers = array('X-Twitter-Client: TAPP', 'X-Twitter-Client-Version: 2.0', 'X-Twitter-Client-URL:http://elnode.com');
+    $headers = array('X-Twitter-Client: TAPP', 'X-Twitter-Client-Version: 2.0', 'X-Twitter-Client-URL:https://github.com/Vayn/TAPP');
     $responseInfo = array();
 
     $ch = curl_init($url);
@@ -21,7 +21,7 @@ function process($url) {
     curl_close($ch);
 
     if (intval($responseInfo['http_code']) != 200) {
-        return False
+        return False;
     }
     else {
         return $ret;
@@ -35,7 +35,7 @@ function process($url) {
 //
 // RSS 生成函数
 //
-function generateRss($data) {
+function rss($data) {
     global $cache_url;
 
     $rsshead =<<<XML
@@ -50,7 +50,7 @@ function generateRss($data) {
    <ttl>40</ttl>
 XML;
     if (empty($data)) {
-        die('Powered by <a href="">TAPP</a>');
+        die('Powered by <a href="https://github.com/Vayn/TAPP">TAPP</a>');
     }
 
     foreach ($data as $tweet) {
@@ -107,10 +107,10 @@ function urlparse($text) {
 
 
 //
-// Cache output 函数
+// save cache 函数
 //
-function catchOutput($type, $data) {
-    global $user_dir;
+function save_cache($data, $type, $dir) {
+    $user_dir = $dir;
 
     if ($type == 'json') {
         $data = json_encode($data);
@@ -118,14 +118,17 @@ function catchOutput($type, $data) {
         file_put_contents($user_dir . 'cache.json', $data);
     }
     elseif ($type == 'rss') {
-        $data = generateRss($data);
+        $data = rss($data);
         file_put_contents($user_dir . 'cache.rss', $data);
     }
     else {
         $i = 0;
         foreach ($data as $key) {
             $tem_arr[$i]['text'] = $key['text'];
-            $tem_arr[$i]['date'] = '<a href="http://twitter.com/' . $key['user']['screen_name'] . '/status/' . $key['id'] . '">' . relativeTime($key['created_at']) . '</a>';
+            $tem_arr[$i]['date'] = '<a href="http://twitter.com/' .
+                $key['user']['screen_name'] .
+                '/status/' . $key['id'] . '">' .
+                relative_time($key['created_at']) . '</a>';
             $i++;
         }
 
@@ -141,7 +144,7 @@ function catchOutput($type, $data) {
 //
 // Relative time 函数
 //
-function relativeTime($time) {
+function relative_time($time) {
     $now = time(); // 现在时间
     $timestamp = strtotime($time); // 传入的时间
     $differ = $now - $timestamp; // 时间差
