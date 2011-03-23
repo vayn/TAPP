@@ -110,16 +110,16 @@ function urlparse($text) {
 // save cache 函数
 //
 function save_cache($data, $type, $dir) {
-    $user_dir = $dir;
+    $path = $dir;
 
     if ($type == 'json') {
         $data = json_encode($data);
         $data = 'twitterCallback2(' . $data . ');';
-        file_put_contents($user_dir . 'cache.json', $data);
+        file_put_contents($path . 'cache.json', $data);
     }
     elseif ($type == 'rss') {
         $data = rss($data);
-        file_put_contents($user_dir . 'cache.rss', $data);
+        file_put_contents($path . 'cache.rss', $data);
     }
     else {
         $i = 0;
@@ -133,7 +133,7 @@ function save_cache($data, $type, $dir) {
         }
 
         $data = serialize($tem_arr);
-        file_put_contents($user_dir . 'cache', $data);
+        file_put_contents($path . 'cache', $data);
     }
 }
 //
@@ -173,12 +173,10 @@ function relative_time($time) {
 //
 // 图片生成函数
 //
-function nowIMG($user, $time, $format, $style = 0) {
+function nowIMG($user, $path, $data, $time, $format, $style = 0) {
     /* S:特别感谢 Sunyanzi @V2EX */
     /* V:特别感谢 Sai @V2EX */
-    global $user_dir;
-
-    $before = file_get_contents($user_dir . 'latest.tweet');
+    $before = $data;
     $clean = array("\n","\r","\n\r","</a>");
     $before = str_replace($clean, '', $before);
     $before = preg_replace("/<a[^>]+>/i", '', $before);
@@ -188,8 +186,9 @@ function nowIMG($user, $time, $format, $style = 0) {
     } else {
         $step = '24';
     }
-    for ($i=0;$i<mb_strlen($before);$i=$i+$step) {
-        $after .= mb_substr($before,$i,$step,'utf-8')."\n\r";
+    $after = '';
+    for ($i = 0; $i < mb_strlen($before); $i += $step) {
+        $after .= mb_substr($before, $i, $step, 'utf-8')."\n\r";
     }
 
     $now_content = $after;
@@ -198,13 +197,13 @@ function nowIMG($user, $time, $format, $style = 0) {
     $now_icon ='';
 
     // header("Content-type: image/png");
-    $avatar = $user_dir . 'avatar.' . $format;
-    $date_font = './show/04b03.ttf';
-    $font = './show/wqy.ttc';
+    $avatar = $path . 'avatar.' . $format;
+    $date_font = FCPATH.'/static/show/04b03.ttf';
+    $font = FCPATH.'/static/show/wqy.ttc';
     $image_tem = imagecreatetruecolor(32, 32);
 
     if ($style == '0') {
-        $fn = './show/wbg/wbg2.jpg';
+        $fn = FCPATH.'/static/show/wbg/wbg2.jpg';
         switch ($format) {
             case 'png':
                 $image[0] = imagecreatefrompng($avatar);
@@ -238,7 +237,7 @@ function nowIMG($user, $time, $format, $style = 0) {
         imagettftext($image[1], 6, 0, 257, 115, $fg, $date_font, $now_date);
         imagettftext($image[1], 8, 0, 10, 115, $fg, $font, $now_icon);
     } else {
-        $fn = './show/wbg/wbg_bubble.gif';
+        $fn = FCPATH.'/static/show/wbg/wbg_bubble.gif';
         $image[0] = imagecreatefromjpeg($avatar);
         $image[1] = imagecreatefromgif($fn);
         $now = imagecopymerge($image[1],$image[0],12,16,0,0,32,32,100);
@@ -249,7 +248,7 @@ function nowIMG($user, $time, $format, $style = 0) {
         imagettftext($image[1], 8, 0, 305, 29, 0, $font, $now_icon);
     }
     // imagepng($image[1]);
-    imagepng($image[1], $user_dir . 'show.png');
+    imagepng($image[1], $path . 'show.png');
 }
 //
 //

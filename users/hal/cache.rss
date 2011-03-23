@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:georss="http://www.georss.org/georss" xmlns:twitter="http://api.twitter.com">
+  <channel>
+   <title>TAPP</title>
+   <link></link>
+   <atom:link href="" rel="self" type="application/rss+xml" />
+   <description>TAPP updates from Twitter</description>
+   <language>en-us</language>
+   <ttl>40</ttl><item>
+  <title>vayn: No one tells us what the front page should be– we create our own with the help of our friends. // RIP Digg http://vayn.de/LDPWP</title>
+  <description>vayn: No one tells us what the front page should be– we create our own with the help of our friends. // RIP Digg http://vayn.de/LDPWP</description>
+  <pubDate>Wed Mar 23 17:20:54 +0000 2011</pubDate>
+  <guid>http://twitter.com/vayn/statuses/5.0607969041261E+16</guid>
+  <link>http://twitter.com/vayn/statuses/5.0607969041261E+16</link>
+</item> </channel>
+</rss>

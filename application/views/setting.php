@@ -91,12 +91,12 @@
                 switch ($setting->type):
                     case 'html':
                         echo "<pre class='sh_php'><code>&lt?php\n" .
-                            "require('".$user_dir."/include.php');\n" .
+                            "require('".$user_dir."include.php');\n" .
                             '?&gt;</code></pre>';
                     break;
 
                     case 'rss':
-                        echo '<pre><code><a target="_blank" href="'.$cache.'/cache.rss">'.$cache.'/cache.rss'.'</a></code></pre>';
+                        echo '<pre><code><a target="_blank" href="'.$cache.'cache.rss">'.$cache.'cache.rss'.'</a></code></pre>';
                     break;
                     
                     case 'json':

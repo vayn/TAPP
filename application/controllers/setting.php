@@ -20,11 +20,11 @@ class Setting extends CI_Controller {
         $user = $this->session->userdata('user');
 
         $this->config->load('custom');
-        $user_dir = $this->config->item('user_dir')."{$user}/";
+        $user_dir = $this->config->item('users_dir')."{$user}/";
         $data['user_dir'] = $user_dir;
 
         $data['url'] = $this->config->site_url();
-        $data['cache'] = $data['url']."user/{$user}/";
+        $data['cache'] = $data['url']."users/{$user}/";
 
         # Input and textarea field attributes
         $data['user'] = array(
@@ -120,13 +120,14 @@ class Setting extends CI_Controller {
                 );
 
             $this->load->driver('retriever');
-            $data = $this->retriever->twitter->retrieve($setting);
-            $setting['latest'] = $data ? $data['latest'] : '!!Error!!';
+            $msg = $this->retriever->twitter->retrieve_msg($setting);
+            $setting['latest'] = $msg ? $msg['latest'] : '!!Error!!';
 
             $this->Setting_model->update_setting($setting);
 
             $this->load->helper('function');
-            save_cache($data['tweets'], $type, $user_dir);
+            save_cache($msg['tweets'], $type, $user_dir);
+
             redirect('./');
         }
         else {

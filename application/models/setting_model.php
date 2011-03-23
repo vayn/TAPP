@@ -38,6 +38,11 @@ class Setting_model extends CI_Model {
         return $latest;
     }
 
+    public function reset_latest($uid) {
+        $this->db->where('uid', $uid);
+        $this->db->update('setting', array('latest' => ''));
+    }
+
     public function update_setting($setting) {
         if ($this->db->get_where('setting', array('uid' => $setting['uid']))->result()) {
             $this->db->where('uid', $setting['uid']);

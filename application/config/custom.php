@@ -8,6 +8,6 @@
  *    Create Date:      2011年03月23日 星期三 05时17分42秒
  */
 
-$config['user_dir'] = FCPATH.'users/';
+$config['users_dir'] = FCPATH.'users/';
 
 /* End of file custom.php */
