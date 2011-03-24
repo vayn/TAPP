@@ -62,7 +62,7 @@
             <hr /> 
 
             <?php echo form_fieldset(); ?>
-                <?php echo form_submit($submit); ?>
+                <?php echo form_submit($update); ?>
             <?php echo form_fieldset_close(); ?>
 
         <?php echo form_close(); ?>
@@ -90,13 +90,18 @@
                 <?php
                 switch ($setting->type):
                     case 'html':
-                        echo "<pre class='sh_php'><code>&lt?php\n" .
-                            "require('".$user_dir."include.php');\n" .
-                            '?&gt;</code></pre>';
+                ?>
+<pre class="sh_html"><code>&lt;iframe src="<?php echo $cache; ?>cache.html" width="100%" height="300"&gt;
+  &lt;p&gt;Your browser does not support iframes.&lt;/p&gt;
+&lt;/iframe&gt;</code></pre>
+
+                <?php
                     break;
 
                     case 'rss':
-                        echo '<pre><code><a target="_blank" href="'.$cache.'cache.rss">'.$cache.'cache.rss'.'</a></code></pre>';
+                        echo '<pre><code><a target="_blank" href="'.
+                            $cache.'cache.rss">'.
+                            $cache.'cache.rss'.'</a></code></pre>';
                     break;
                     
                     case 'json':

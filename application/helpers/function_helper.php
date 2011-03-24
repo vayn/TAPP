@@ -122,18 +122,19 @@ function save_cache($data, $type, $dir) {
         file_put_contents($path . 'cache.rss', $data);
     }
     else {
-        $i = 0;
+        $html = '<div class="tapp_tweet"><ul>';
         foreach ($data as $key) {
-            $tem_arr[$i]['text'] = $key['text'];
-            $tem_arr[$i]['date'] = '<a href="http://twitter.com/' .
-                $key['user']['screen_name'] .
-                '/status/' . $key['id'] . '">' .
-                relative_time($key['created_at']) . '</a>';
-            $i++;
+            $date = '<a href="http://twitter.com/'.
+                    $key['user']['screen_name'].
+                    '/status/'.$key['id'].'">'.
+                    relative_time($key['created_at']).
+                    '</a>';
+            $html .= '<li>'.
+                        urlparse($key['text']).' '.$date.
+                     '</li>';
         }
-
-        $data = serialize($tem_arr);
-        file_put_contents($path . 'cache', $data);
+        $html .= '</ul></div>';
+        file_put_contents($path.'cache.html', $html);
     }
 }
 //

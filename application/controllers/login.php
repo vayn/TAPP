@@ -65,17 +65,16 @@ class Login extends CI_Controller {
 
             $user_dir = FCPATH.'/users/'.$user;
             if ( ! file_exists($user_dir)) {
-                if (mkdir($user_dir, 0777)) {
-                    try {
-                        if (copy($user_dir.'/../include.sample.php', $user_dir.'/include.php')) {
-                                redirect('setting/', 'location', 302);
-                        }
-                        else {
-                            throw new Exception('Cannot create directory, please check permission.');
-                        }
-                    } catch (Exception $e) {
-                        show_error($e->getmessage());
+                try {
+                    if (mkdir($user_dir, 0777)) {
+                        redirect('setting/', 'location', 302);
                     }
+                    else {
+                        throw new Exception('Cannot create directory, please check permission.');
+                    }
+                }
+                catch (Exception $e) {
+                    show_error($e->getmessage());
                 }
             }
             else {

@@ -62,10 +62,10 @@ class Setting extends CI_Controller {
             array('name' => 'type', 'id' => 'type', 'value' => 'rss'),
             );
 
-        $data['submit'] = array(
+        $data['update'] = array(
             'name' => 'submit',
             'id' => 'save_submit',
-            'value' => 'Save',
+            'value' => 'Update',
             'class' => 'clean-gray',
             'tabindex' => 3,
         );

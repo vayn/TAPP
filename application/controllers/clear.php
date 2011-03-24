@@ -14,24 +14,35 @@ class Clear extends CI_Controller {
     }
 
     public function index() {
-        $url = $this->config->item('base_url');
-        $dir = $this->config->item('users_dir').$this->session->userdata('user').'/';
-        $types = array('html' => '', 'json' => '.json', 'rss' => '.rss');
+        if ( ! $this->session->userdata('uid')) {
+            redirect($url);
+        }
 
-        if ($this->session->userdata('uid')) {
-            foreach ($types as $key => $value) {
-                $cache = $dir.'cache'.$value;
-                if (file_exists($cache)) {
-                    file_put_contents($cache, '');
-                }
+        $url = $this->config->item('base_url');
+        $this->load->config('custom');
+        $user_dir = $this->config->item('users_dir').$this->session->userdata('user').'/';
+        $reset = file_get_contents($user_dir.'../latest');
+        $types = array('html' => '.html', 'json' => '.json', 'rss' => '.rss');
+
+        foreach ($types as $key => $value) {
+            $cache = $user_dir.'cache'.$value;
+            if (file_exists($cache)) {
+                file_put_contents($cache, $reset);
             }
-            $this->load->model('Setting_model', '', True);
-            $this->Setting_model->reset_latest($this->session->userdata('uid'));
-            redirect($url);
         }
-        else {
-            redirect($url);
+
+        $avatars = glob("{$user_dir}avatar.*");
+        foreach ($avatars as $avatar) {
+            $avatar = realpath($avatar);
+            if (file_exists($avatar)) {
+                unlink($avatar);
+            }
         }
+
+        $this->load->model('Setting_model', '', True);
+        $this->Setting_model->reset_latest($this->session->userdata('uid'));
+
+        redirect($url);
     }
 }
 
