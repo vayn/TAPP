@@ -16,28 +16,29 @@ class Show extends CI_Controller {
     public function index() {
         $data = array();
         $user = $this->session->userdata('user');
+        $uid = $this->session->userdata('uid');
         $site_url = $this->config->site_url();
 
         $this->load->config('custom');
         $user_dir = $this->config->item('users_dir').$user.'/';
 
-        $shows = glob("{$user_dir}show.*");
+        $avatars = glob("{$user_dir}avatar.*");
         $mtime = 0;
         $format = '';
-        foreach($shows as $show) {
-            if (filemtime($show) > $mtime) {
-                $mtime = filemtime($show);
-                $format = pathinfo($show, PATHINFO_EXTENSION);
+        foreach($avatars as $avatar) {
+            if (filemtime($avatar) > $mtime) {
+                $mtime = filemtime($avatar);
+                $format = pathinfo($avatar, PATHINFO_EXTENSION);
             }
         }
 
         $this->load->model('Setting_model', '', True);
-        $setting = $this->Setting_model->get_setting();
+        $setting = $this->Setting_model->get_setting($uid);
         $cache_time = $setting->cache_time;
 
         if (time() - $mtime > $cache_time) {
             $this->load->driver('retriever');
-            $format = $this->retriever->twitter->retrieve_headimg();
+            $format = $this->retriever->twitter->retrieve_showimg($user, $uid);
         }
         $src = "{$site_url}users/{$user}/show.{$format}";
         $data['src'] = $src;

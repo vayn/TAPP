@@ -50,17 +50,16 @@ class Retriever_twitter extends CI_Driver {
         return $data;
     }
 
-    public function retrieve_headimg() {
+    public function retrieve_showimg($user, $uid) {
         $this->CI->config->load('custom');
         $dir = $this->CI->config->item('users_dir');
-        $user = $this->CI->session->userdata('user');
         $user_dir = $dir.$user.'/';
 
         $this->CI->load->model('Setting_model', '', True);
-        $setting = $this->CI->Setting_model->get_setting();
+        $setting = $this->CI->Setting_model->get_setting($uid);
         $latest = $setting->latest;
         if (empty($latest)) {
-            $latest = file_get_contents($dir.'../latest');
+            $latest = file_get_contents($dir.'latest');
         }
         $user = $setting->twitter;
         $api = 'http://api.twitter.com/1/users/profile_image/'.$user.'.json?size=normal';

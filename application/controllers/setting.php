@@ -17,6 +17,7 @@ class Setting extends CI_Controller {
         if ( ! $this->session->userdata('uid')) {
             redirect('login/');
         }
+        $uid = $this->session->userdata('uid');
         $user = $this->session->userdata('user');
 
         $this->config->load('custom');
@@ -100,7 +101,7 @@ class Setting extends CI_Controller {
         $this->form_validation->set_rules($rules);
 
         $this->load->model('Setting_model', '', True);
-        $data['setting'] = $this->Setting_model->get_setting();
+        $data['setting'] = $this->Setting_model->get_setting($uid);
         $data['latest'] = $this->Setting_model->get_latest();
 
         if ($this->form_validation->run() == True) {
@@ -111,7 +112,7 @@ class Setting extends CI_Controller {
             $type = $this->input->post('type');
 
             $setting = array(
-                'uid' => $this->session->userdata('uid'),
+                'uid' => $uid,
                 'twitter' => $twitter,
                 'amount' => $amount,
                 'reply' => $reply,

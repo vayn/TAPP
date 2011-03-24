@@ -12,17 +12,32 @@ class Setting_model extends CI_Model {
         parent::__construct();
    }
 
-    public function get_setting() {
-        $this->db->from('setting');
-        $this->db->where('uid', $this->session->userdata('id'));
-        $query = $this->db->get()->result();
-        if (empty($query)) {
+    public function get_setting($uid='') {
+        if (!empty($uid)) {
             $this->db->from('setting');
-            $this->db->where('uid', 1);
+            $this->db->where('uid', $uid);
             $query = $this->db->get()->result();
+            if (empty($query)) {
+                $this->db->from('setting');
+                $this->db->where('uid', 1);
+                $query = $this->db->get()->result();
+            }
+            $query = $query[0];
         }
-        $query = $query[0];
+        else {
+            $query = $this->db->get('setting')->result();
+        }
         return $query;
+    }
+
+    public function update_setting($setting) {
+        if ($this->db->get_where('setting', array('uid' => $setting['uid']))->result()) {
+            $this->db->where('uid', $setting['uid']);
+            $this->db->update('setting', $setting);
+        }
+        else {
+            $this->db->insert('setting', $setting);
+        }
     }
 
     public function get_latest() {
@@ -43,14 +58,10 @@ class Setting_model extends CI_Model {
         $this->db->update('setting', array('latest' => ''));
     }
 
-    public function update_setting($setting) {
-        if ($this->db->get_where('setting', array('uid' => $setting['uid']))->result()) {
-            $this->db->where('uid', $setting['uid']);
-            $this->db->update('setting', $setting);
-        }
-        else {
-            $this->db->insert('setting', $setting);
-        }
+    public function get_user($id) {
+        $this->db->select('user');
+        $query = $this->db->get_where('users', array('id' => $id))->result();
+        return $query[0]->user;
     }
 }
 
