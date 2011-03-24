@@ -116,6 +116,7 @@ class Setting extends CI_Controller {
                 'amount' => $amount,
                 'reply' => $reply,
                 'cache_time' => $cache_time,
+                'update_time' => time(),
                 'type' => $type,
                 );
 
