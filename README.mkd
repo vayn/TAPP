@@ -1,16 +1,39 @@
-TAPP
-----
+# TAPP
 
-TAPP2 is coming soon.
+TAPP is NOT a twitter web client.
 
-## What's TAPP?
+TAPP provides services that let you display your tweets more easily than before.
 
-TAPP 是一个让你轻松展示和分享 tweet 的小工具，支持包括 RSS, JSON 在内的多种格式输出。
+TAPP supports JSON, RSS and HTML output. You can also use TAPP make your own twitter-like Badge and/or ShowPic (signature), you could embed them anywhere you want. And TAPP will update the content automatically.
 
-TAPP 生成的代码可直接在网页上使用，比如选择 JSON 格式会生成类似 Twitter Badge Widget 的代码。
+TAPP 不是 twitter 的 web 客户端。
 
-## Contact Us
+但 TAPP 可以让你更轻松的查看和展示自己在 twitter 上发布的消息。
+
+TAPP 支持以 JSON、RSS和 HTML 这三种格式输出你的消息。同时，TAPP 还能生成类似 Twitter 那种 Badge 或签名图，你可以把它们嵌入 blog 侧栏或者其它任意地方。TAPP 还能自动更新消息。
+
+## INSTALLATION AND USAGE
+
+...(under construction)...
+
+__DEMO:__ [http://www.tapp.dotcloud.com][1]
+
+default id and password - hal:9000
+
+缺省账户及密码——hal:9000
+
+如果你不想自己架设 TAPP 那么可以使用 [demo][1] 站点，不过需要申请开通账号。联系方式见下方。
+
+## CONTACT
+
+If you have any questions, please send mail to vayn@vayn.de.
 
 如果你有什么问题请发 email 到 vayn@vayn.de
 
-This application is made by [@disinfeqt](http://twitter.com/disinfeqt) and [@vayn](http://twitter.com/vayn)
+## COPYRIGHT AND LICENSE
+
+Copyright (C) 2011 [@vayn](http://twitter.com/vayn) and [@disinfeqt](http://twitter.com/disinfeqt).
+
+This program is free software, you can redistribute it and/or modify it under license which TAPP is using.
+
+[1]:http://www.tapp.dotcloud.com
