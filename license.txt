@@ -1,9 +1,9 @@
-Copyright (c) 2008 - 2011, EllisLab, Inc.
+Copyright (c) 2011, Vayn a.k.a VT <vayn@vayn.de>
 All rights reserved.
 
-This license is a legal agreement between you and EllisLab Inc. for the use
-of CodeIgniter Software (the "Software").  By obtaining the Software you
-agree to comply with the terms and conditions of this license.
+This license is a legal agreement between you and Vayn a.k.a. VT. for the
+use of TAPP (the "Software").  By obtaining the Software you agree to comply
+with the terms and conditions of this license.
 
 PERMITTED USE
 You are permitted to use, copy, modify, and distribute the Software and its
@@ -25,9 +25,9 @@ the following conditions are met:
    they are derived from CodeIgniter in their documentation and/or other
    materials provided with the distribution.
 
-6. Products derived from the Software may not be called "CodeIgniter",
-   nor may "CodeIgniter" appear in their name, without prior written
-   permission from EllisLab, Inc.
+6. Products derived from the Software may not be called "TAPP", nor may
+   "TAPP" appear in their name, without prior written permission from
+   Vayn a.k.a. VT.
 
 INDEMNITY
 You agree to indemnify and hold harmless the authors of the Software and
