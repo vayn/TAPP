@@ -20,7 +20,7 @@ __DEMO:__ [http://www.tapp.dotcloud.com][1]
 
 default id and password - hal:9000
 
-![ShowPic](http://www.tapp.dotcloud.com/users/vayn/show.png)
+![ShowPic](https://github.com/Vayn/TAPP/raw/master/users/hal/show.png)
 
 缺省账户及密码——hal:9000
 
