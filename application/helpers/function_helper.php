@@ -1,4 +1,13 @@
-<?
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * Author:
+ *    Vayn a.k.a. VT <vayn@vayn.de>
+ *    http://elnode.com
+ *
+ *    File:             function_helper.php
+ *    Create Date:      2011年03月25日 星期五 21时25分51秒
+ */
+
 //
 // 抓取函数
 //
@@ -254,4 +263,4 @@ function nowIMG($user, $path, $data, $time, $format, $style = 0) {
 //
 //
 //
-?>
+/* End of file function_helper.php */
