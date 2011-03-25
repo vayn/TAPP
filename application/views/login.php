@@ -31,9 +31,9 @@
     </section>
     <footer>
         <p>
-            <a href="http://www.zdxia.com/projects/tapp">Tapp</a>
+            <a href="https://github.com/vayn/tapp">Tapp</a>
             <small>2.0.0</small>
-            &copy; <a href="http://www.zdxia.com/">disinfeqt</a> and <a href="http://elnode.com/">vayn</a>
+            &copy; <a href="http://disinfeqt.com/">disinfeqt</a> and <a href="http://elnode.com/">vayn</a>
         </p>
     </footer>
 </body> 
