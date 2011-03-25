@@ -12,6 +12,8 @@ TAPP 不是 twitter 的 web 客户端。
 
 TAPP 支持以 JSON、RSS和 HTML 这三种格式输出你的消息。同时，TAPP 还能生成类似 Twitter 那种 Badge 或签名图，你可以把它们嵌入 blog 侧栏或者其它任意地方。TAPP 还能自动更新消息。
 
+![ShowPic](http://www.tapp.dotcloud.com/users/vayn/show.png)
+
 ## INSTALLATION AND USAGE
 
 ...(under construction)...
