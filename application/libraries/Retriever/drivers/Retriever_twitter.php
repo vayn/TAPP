@@ -79,8 +79,6 @@ class Retriever_twitter extends CI_Driver {
         }
         $time = date('D M j T Y', time());
         nowIMG($user, $user_dir, $latest, $time, $format);
-
-        return $format;
     }
 }
 

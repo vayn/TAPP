@@ -28,7 +28,7 @@ class Show extends CI_Controller {
         foreach($avatars as $avatar) {
             if (filemtime($avatar) > $mtime) {
                 $mtime = filemtime($avatar);
-                $format = pathinfo($avatar, PATHINFO_EXTENSION);
+                # $format = pathinfo($avatar, PATHINFO_EXTENSION);
             }
         }
 
@@ -38,9 +38,9 @@ class Show extends CI_Controller {
 
         if (time() - $mtime > $cache_time) {
             $this->load->driver('retriever');
-            $format = $this->retriever->twitter->retrieve_showimg($user, $uid);
+            $this->retriever->twitter->retrieve_showimg($user, $uid);
         }
-        $src = "{$site_url}users/{$user}/show.{$format}";
+        $src = "{$site_url}users/{$user}/show.png";
         $data['src'] = $src;
 
         $this->load->view('template/header');
