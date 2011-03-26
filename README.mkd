@@ -14,15 +14,47 @@ TAPP 支持以 JSON、RSS和 HTML 这三种格式输出你的消息。同时，T
 
 ## INSTALLATION AND USAGE
 
-...(under construction)...
-
 __DEMO:__ [http://www.tapp.dotcloud.com][1]
 
 default id and password - hal:9000
 
+缺省账户及密码——hal:9000
+
+### INSTALLATION
+
+TAPP 的运行环境：
+
+* 支持 rewrite 功能 的 Apache 或者 Nginx 服务器
+* PHP 5
+* PHP 已开启 Curl 和 PDO 支持
+
+首先从 Github 上获取 [TAPP][1] 的最新代码，打开 `application/config/config.php`，修改 `$config['base_url']` 的值为你自己的 url，保存关闭。
+
+用 [SQLite Database Browser](http://sqlitebrowser.sourceforge.net/) 或其他工具打开 `application/db/user.sqlite3` 数据库，里面有 users, setting 和 tweets 3 个表，users 表存放 TAPP 用户的登录信息，setting 表存放每个用户的设置，tweets 表暂时没用。
+
+打开 users 表可以看到里面已经有一个账号，这个账号是 TAPP 的默认账号，用户名是 hal，密码是 9000。你可以修改这个账号，但请不要删除。如果想添加新用户，直接在 users 表添加就好了。
+
+设置好后把 TAPP 上传到服务器上。
+
+### USAGE
+
+Twitter username：你的 twitter 账号
+
+Amount：抓取条目数
+
+Replies：是否包含回复他人的条目
+
+Cache time：缓存时限
+
+Output：输出格式。选择格式后会在下方的 Your include code 自动显示生成代码（选择 JSON 格式可生成 Badge），你只需复制代码贴到你想贴的地方就能展示了。
+
+点击底部的 Show 可生成签名图:
+
 ![ShowPic](https://github.com/Vayn/TAPP/raw/master/users/hal/show.png)
 
-缺省账户及密码——hal:9000
+点击 Clear Cache 清空自己的缓存。
+
+Logout 退出设置。
 
 如果你不想自己架设 TAPP 那么可以使用 [demo][1] 站点，不过需要申请开通账号。联系方式见下方。
 
