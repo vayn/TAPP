@@ -22,17 +22,35 @@ default id and password - hal:9000
 
 ### INSTALLATION
 
+Runtime Environment:
+
+* Apache or Nginx server with URL rewrite
+* PHP 5 with GD, curl and PDO
+
 TAPP 的运行环境：
 
 * 支持 rewrite 功能 的 Apache 或者 Nginx 服务器
-* PHP 5
-* PHP 已开启 Curl 和 PDO 支持
+* PHP 5 以上，开启了 GD, curl 和 PDO 支持
+
+First clone latest source code from Github, then open `application/config/config.php`, edit the value of `$config['base_url']` to your URL.
+
+Use [SQLite Database Browser](http://sqlitebrowser.sourceforge.net/) or other tools to open `application/db/user.sqlite3`.
+
+There are three tables in the database. 'users' stores user login information, 'setting' stores every user's setting. 'tweets' is useless temporarily.
+
+You can add new user to 'users' table. Don't forget encrypt the raw password with SHA1 before you store it to the database.
+
+Finally, upload TAPP to your server.
 
 首先从 Github 上获取 [TAPP][1] 的最新代码，打开 `application/config/config.php`，修改 `$config['base_url']` 的值为你自己的 url，保存关闭。
 
-用 [SQLite Database Browser](http://sqlitebrowser.sourceforge.net/) 或其他工具打开 `application/db/user.sqlite3` 数据库，里面有 users, setting 和 tweets 3 个表，users 表存放 TAPP 用户的登录信息，setting 表存放每个用户的设置，tweets 表暂时没用。
+用 [SQLite Database Browser](http://sqlitebrowser.sourceforge.net/) 或其他工具打开 `application/db/user.sqlite3` 数据库，里面有 users, setting 和 tweets 3 个表。
 
-打开 users 表可以看到里面已经有一个账号，这个账号是 TAPP 的默认账号，用户名是 hal，密码是 9000。你可以修改这个账号，但请不要删除。如果想添加新用户，直接在 users 表添加就好了。
+users 表存放 TAPP 用户的登录信息，setting 表存放每个用户的设置，tweets 表暂时没用。
+
+打开 users 表可以看到里面已经有一个账号，这个账号是 TAPP 的默认账号。
+
+你可以修改这个账号，但请不要删除。如果想添加新用户，直接在 users 表添加就好了。
 
 设置好后把 TAPP 上传到服务器上。
 
