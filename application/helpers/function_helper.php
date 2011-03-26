@@ -45,7 +45,7 @@ function process($url) {
 // RSS 生成函数
 //
 function rss($data) {
-    global $cache_url;
+    $cache_url = 'http://twitter.com/';
 
     $rsshead =<<<XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -59,7 +59,7 @@ function rss($data) {
    <ttl>40</ttl>
 XML;
     if (empty($data)) {
-        die('Powered by <a href="https://github.com/Vayn/TAPP">TAPP</a>');
+        return False;
     }
 
     foreach ($data as $tweet) {
@@ -128,7 +128,7 @@ function save_cache($data, $type, $dir) {
     }
     elseif ($type == 'rss') {
         $data = rss($data);
-        file_put_contents($path . 'cache.rss', $data);
+        file_put_contents($path.'cache.rss', $data);
     }
     else {
         $html = '<div class="tapp_tweet"><ul>';

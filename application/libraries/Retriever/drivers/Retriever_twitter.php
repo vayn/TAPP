@@ -36,16 +36,22 @@ class Retriever_twitter extends CI_Driver {
         // According to reply to filter tweets 
         if ($setting['reply'] == 'no') {
             $i = 0;
+            $tmparr = array();
             foreach ($data['tweets'] as $key) {
                 if ($key['in_reply_to_user_id'] != '') {
                     unset($data['tweets'][$i]);
                 }
                 else {
-                    $tmp_arr[] = $data['tweets'][$i];
+                    $tmparr[] = $data['tweets'][$i];
                 }
                 $i++;
             }
-            $data['tweets'] = isset($tmp_arr) ? $tmp_arr : array();
+            if (empty($tmparr)) {
+                $data['tweets'][][] = $data['latest'];
+            }
+            else {
+                $data['tweets'] = $tmparr;
+            }
         }
         return $data;
     }

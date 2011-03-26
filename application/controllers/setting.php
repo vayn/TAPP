@@ -124,6 +124,7 @@ class Setting extends CI_Controller {
             $this->load->driver('retriever');
             $msg = $this->retriever->twitter->retrieve_msg($setting);
             $setting['latest'] = $msg ? $msg['latest'] : '!!Error!!';
+            $this->retriever->twitter->retrieve_showimg($user, $uid);
 
             $this->Setting_model->update_setting($setting);
 
