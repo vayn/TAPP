@@ -220,15 +220,15 @@ function nowIMG($user, $path, $data, $time, $format, $style = 0) {
 
                 imagesavealpha($image_tem, true);
                 imagealphablending($image_tem, false);
-                break;
+            break;
 
             case 'gif':
                 $image[0] = imagecreatefromgif($avatar);
-                break;
+            break;
 
             case 'jpg':
                 $image[0] = imagecreatefromjpeg($avatar);
-                break;
+            break;
         }
 
         imagecopyresampled($image_tem, $image[0], 0, 0, 0, 0, 32, 32, 48, 48);

@@ -53,9 +53,9 @@ class Setting_model extends CI_Model {
         return $latest;
     }
 
-    public function reset_latest($uid) {
+    public function reset($uid) {
         $this->db->where('uid', $uid);
-        $this->db->update('setting', array('latest' => ''));
+        $this->db->update('setting', array('latest' => '', 'update_time' => 0));
     }
 
     public function get_user($id) {

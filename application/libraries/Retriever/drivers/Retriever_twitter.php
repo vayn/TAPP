@@ -74,8 +74,14 @@ class Retriever_twitter extends CI_Driver {
             $format = 'gif';
         }
         else {
-            file_put_contents($user_dir.'avatar.jpg', $ret);
-            $format = 'jpg';
+            if (@imagecreatefromstring($ret) === False) {
+                copy(FCPATH.'/users/avatar.png', $user_dir.'avatar.png');
+                $format = 'png';
+            }
+            else {
+                file_put_contents($user_dir.'avatar.jpg', $ret);
+                $format = 'jpg';
+            }
         }
         $time = date('D M j T Y', time());
         nowIMG($user, $user_dir, $latest, $time, $format);

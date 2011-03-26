@@ -32,7 +32,7 @@ class Clear extends CI_Controller {
         }
 
         $this->load->model('Setting_model', '', True);
-        $this->Setting_model->reset_latest($this->session->userdata('uid'));
+        $this->Setting_model->reset($this->session->userdata('uid'));
 
         $this->load->driver('retriever');
         $this->retriever->twitter->retrieve_showimg($this->session->userdata('user'), $this->session->userdata('uid'));
