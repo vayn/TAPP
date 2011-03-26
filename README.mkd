@@ -27,22 +27,22 @@ Runtime Environment:
 * Apache or Nginx server with URL rewrite
 * PHP 5 with GD, curl and PDO
 
+First clone latest source code from Github, then open `application/config/config.php`, edit the value of `$config['base_url']` to your URL.
+
+Use [SQLite Database Browser](http://sqlitebrowser.sourceforge.net/) or other tools to open `application/db/user.sqlite3`.
+
+There are three tables in the database. 'users' stores user login information.  'setting' stores every user's setting. 'tweets' is useless temporarily.
+
+You can add new user to 'users' table. Don't forget encrypt the raw password with [SHA1](http://en.wikipedia.org/wiki/SHA-1) before you store it to the database.
+
+Finally, upload TAPP to your server.
+
 TAPP 的运行环境：
 
 * 支持 rewrite 功能 的 Apache 或者 Nginx 服务器
 * PHP 5 以上，开启了 GD, curl 和 PDO 支持
 
-First clone latest source code from Github, then open `application/config/config.php`, edit the value of `$config['base_url']` to your URL.
-
-Use [SQLite Database Browser](http://sqlitebrowser.sourceforge.net/) or other tools to open `application/db/user.sqlite3`.
-
-There are three tables in the database. 'users' stores user login information, 'setting' stores every user's setting. 'tweets' is useless temporarily.
-
-You can add new user to 'users' table. Don't forget encrypt the raw password with SHA1 before you store it to the database.
-
-Finally, upload TAPP to your server.
-
-首先从 Github 上获取 [TAPP][1] 的最新代码，打开 `application/config/config.php`，修改 `$config['base_url']` 的值为你自己的 url，保存关闭。
+首先从 Github 上获取 TAPP 的最新代码，打开 `application/config/config.php`，修改 `$config['base_url']` 的值为你自己的 url，保存关闭。
 
 用 [SQLite Database Browser](http://sqlitebrowser.sourceforge.net/) 或其他工具打开 `application/db/user.sqlite3` 数据库，里面有 users, setting 和 tweets 3 个表。
 
