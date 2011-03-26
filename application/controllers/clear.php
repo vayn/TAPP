@@ -31,16 +31,11 @@ class Clear extends CI_Controller {
             }
         }
 
-        $avatars = glob("{$user_dir}avatar.*");
-        foreach ($avatars as $avatar) {
-            $avatar = realpath($avatar);
-            if (file_exists($avatar)) {
-                unlink($avatar);
-            }
-        }
-
         $this->load->model('Setting_model', '', True);
         $this->Setting_model->reset_latest($this->session->userdata('uid'));
+
+        $this->load->driver('retriever');
+        $this->retriever->twitter->retrieve_showimg($this->session->userdata('user'), $this->session->userdata('uid'));
 
         redirect($url);
     }
