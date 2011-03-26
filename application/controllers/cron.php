@@ -41,7 +41,6 @@ class Cron extends CI_Controller {
                     $this->Setting_model->update_setting($setting);
                     save_cache($msg['tweets'], $setting['type'], $user_dir);
 
-                    $this->load->driver('retriever');
                     $this->retriever->twitter->retrieve_showimg($user, $uid);
                 }
             }
