@@ -91,7 +91,7 @@
                 switch ($setting->type):
                     case 'html':
                 ?>
-<pre class="sh_html"><code>&lt;iframe src="<?php echo $cache; ?>cache.html" width="100%" height="300"&gt;
+<pre class="sh_html"><code>&lt;iframe src="<?php echo $cache; ?>/cache.html" width="100%" height="300"&gt;
   &lt;p&gt;Your browser does not support iframes.&lt;/p&gt;
 &lt;/iframe&gt;</code></pre>
 
@@ -100,8 +100,8 @@
 
                     case 'rss':
                         echo '<pre><code><a target="_blank" href="'.
-                            $cache.'cache.rss">'.
-                            $cache.'cache.rss'.'</a></code></pre>';
+                            $cache.'/cache.rss">'.
+                            $cache.'/cache.rss'.'</a></code></pre>';
                     break;
                     
                     case 'json':
@@ -112,8 +112,8 @@
 &lt;ul id="twitter_update_list"&gt;&lt;/ul&gt;
 &lt;/div&gt;
 &lt;!-- Javascript --&gt;
-&lt;script type="text/javascript" src="<?php echo $url; ?>static/js/twitter.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="<?php echo $cache; ?>cache.json"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="<?php echo site_url("static/js/twitter.js"); ?>&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="<?php echo $cache; ?>/cache.json"&gt;&lt;/script&gt;
 </code></pre>
                 <?php
                     break;

@@ -24,8 +24,7 @@ class Setting extends CI_Controller {
         $user_dir = $this->config->item('users_dir')."{$user}/";
         $data['user_dir'] = $user_dir;
 
-        $data['url'] = $this->config->site_url();
-        $data['cache'] = $data['url']."users/{$user}/";
+        $data['cache'] = site_url("users/{$user}");
 
         # Input and textarea field attributes
         $data['user'] = array(

@@ -17,7 +17,6 @@ class Show extends CI_Controller {
         $data = array();
         $user = $this->session->userdata('user');
         $uid = $this->session->userdata('uid');
-        $site_url = $this->config->site_url();
 
         $this->load->model('Setting_model', '', True);
         $setting = $this->Setting_model->get_setting($uid);
@@ -28,8 +27,7 @@ class Show extends CI_Controller {
             $this->load->driver('retriever');
             $this->retriever->twitter->retrieve_showimg($user, $uid);
         }
-        $src = "{$site_url}users/{$user}/show.png";
-        $data['src'] = $src;
+        $data['src'] = site_url("users/{$user}/show.png");
 
         $this->load->view('template/header');
         $this->load->view('show', $data);

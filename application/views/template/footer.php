@@ -1,5 +1,5 @@
 <!-- Every LOGGED-IN PAGE should require this footer -->
-<?php $url = $this->config->site_url(); ?>
+<?php $url = site_url(); ?>
 	<footer>
         <p>
             <a href="https://github.com/Vayn/tapp">FAQ</a>
