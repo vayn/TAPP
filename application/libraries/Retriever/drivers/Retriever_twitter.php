@@ -47,7 +47,7 @@ class Retriever_twitter extends CI_Driver {
                 $i++;
             }
             if (empty($tmparr)) {
-                $data['tweets'][][] = $data['latest'];
+                $data['tweets'][] = $primitive[0];
             }
             else {
                 $data['tweets'] = $tmparr;

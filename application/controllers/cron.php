@@ -21,6 +21,7 @@ class Cron extends CI_Controller {
         if ($cron_auth == $password) {
             ignore_user_abort(True);
 
+            $this->load->driver('retriever');
             $this->load->helper('function');
             $this->load->model('Setting_model', '', True);
             $settings = $this->Setting_model->get_setting();
@@ -33,7 +34,6 @@ class Cron extends CI_Controller {
                     $user = $this->Setting_model->get_user($setting['uid']);
                     $user_dir = $dir.$user.'/';
 
-                    $this->load->driver('retriever');
                     $msg = $this->retriever->twitter->retrieve_msg($setting);
                     $setting['latest'] = $msg ? $msg['latest'] : '!!Error!!';
                     $setting['update_time'] = time();
@@ -41,7 +41,7 @@ class Cron extends CI_Controller {
                     $this->Setting_model->update_setting($setting);
                     save_cache($msg['tweets'], $setting['type'], $user_dir);
 
-                    $this->retriever->twitter->retrieve_showimg($user, $uid);
+                    $this->retriever->twitter->retrieve_showimg($user, $setting['uid']);
                 }
             }
         }
